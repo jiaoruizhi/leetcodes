@@ -28,10 +28,10 @@ public class code_0070_climbStairs {
     int[] cache = new int[n + 1];
     cache[0] = 0;
     cache[1] = 1;
-    cache[2] = 2;
+    cache[2] = 1;
 
     for (int i = 3; i <= n; i++) {
-      cache[i] = cache[n - 1] + cache[n - 2];
+      cache[i] = cache[i - 1] + cache[i - 2];
     }
     return cache[n];
   }
