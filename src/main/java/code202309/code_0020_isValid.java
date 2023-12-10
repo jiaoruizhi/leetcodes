@@ -35,7 +35,7 @@ public class code_0020_isValid {
   public boolean isValid(String s) {
     char[] chars = s.toCharArray();
     Stack<Character> stack = new Stack<>();
-    Map<Character,Character> map = new HashMap<>(){{
+    Map<Character,Character> map = new HashMap<Character,Character>(){{
       put('{','}'); put('[',']'); put('(',')');
     }};
 
