@@ -51,7 +51,7 @@ public class code_0722_removeComments {
     //
     //1s3 PSt
     //
-    // /*Test program */,int main(),{ ,  // variable declaration ,int a, b, c;,/* This is a test,   multiline  ,   comment for ,   testing */,a = b + c;,}
+    // /*Test program */,int main(),{ ,  // variable declaration ,int a, b, c;,/* This is a test_1,   multiline  ,   comment for ,   testing */,a = b + c;,}
 
 
     long startTime = new Date().getTime();

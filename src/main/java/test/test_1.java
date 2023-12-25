@@ -1,11 +1,6 @@
 package test;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
-
-public class test {
+public class test_1 {
   public static void main(String[] args) {
 
     Thread t = new Thread() {
