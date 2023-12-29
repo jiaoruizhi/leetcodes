@@ -1,8 +1,6 @@
 package wait;
 
 
-import leet202005.code_0206_reverseList;
-
 import java.util.Scanner;
 
 /*
