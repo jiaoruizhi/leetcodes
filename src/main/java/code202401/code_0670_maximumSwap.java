@@ -34,30 +34,34 @@ public class code_0670_maximumSwap {
 
   // O(n) = log(k)
   public int maximumSwap(int num) {
-    int head = -1;
-    int index = 0;
-    int max = -1;
+    int leftIndex = -1;
+    int left = -1;
+
+    int rightIndex = -1;
+    int right = -1;
+
     int cache = num;
     int i = 0;
     while (cache > 0) {
-      int a = cache % 10;
-      if (a > max) {
-        max = a;
-        index = i;
+      int current = cache % 10;
+      if (current > right) {
+        right = current;
+        rightIndex = i;
+      }
+      if (current < right) {
+        leftIndex = i;
+        left = current;
       }
       cache /= 10;
-      if (cache == 0) {
-        head = a;
-      }
       i++;
     }
 
-    int m1 = (int) (max * Math.pow(10, index));
-    int m2 = (int) (head * Math.pow(10, (i - 1)));
+    int m1 = (int) (right * Math.pow(10, rightIndex));
+    int m2 = (int) (left * Math.pow(10, (leftIndex - 1)));
 
 
-    int p1 = (int) (max * Math.pow(10, (i - 1)));
-    int p2 = (int) (head * Math.pow(10, index));
+    int p1 = (int) (right * Math.pow(10, (rightIndex - 1)));
+    int p2 = (int) (left * Math.pow(10, leftIndex));
 
     return num - m1 - m2 + p1 + p2;
   }
