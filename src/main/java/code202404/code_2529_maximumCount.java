@@ -14,9 +14,9 @@ import static utils.utils.getIntArray;
 *
 
 * */
-public class code_0447_numberOfBoomerangs {
+public class code_2529_maximumCount {
   public static void main(String[] args) {
-    code_0447_numberOfBoomerangs body = new code_0447_numberOfBoomerangs();
+    code_2529_maximumCount body = new code_2529_maximumCount();
 
     // -2 -1 -1 1 2 3
     int[] nums = getIntArray(null, null);
