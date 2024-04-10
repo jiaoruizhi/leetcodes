@@ -26,6 +26,21 @@ public class utils {
     return ret;
   }
 
+  public static List<Integer> getIntList(Scanner scanner, String split) {
+    split = split == null ? " " : split;
+
+    Scanner sc = scanner != null ? scanner : new Scanner(System.in);
+    String line = sc.nextLine();
+    String[] strs = line.split(split);
+    List<Integer> res = new ArrayList<>();
+
+    for (String s : strs) {
+      res.add(Integer.parseInt(s));
+    }
+
+    return res;
+  }
+
   public static String[] getStringArray(Scanner scanner, String split) {
     split = split == null ? " " : split;
 
