@@ -1,7 +1,6 @@
 package hard;
 
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 /*
@@ -18,15 +17,18 @@ import java.util.Scanner;
 * */
 public class code_0076_minWindow {
   public static void main(String[] args) {
+    code_0076_minWindow body = new code_0076_minWindow();
+
     Scanner sc = new Scanner(System.in);
     String s = sc.next();
     String t = sc.next();
-    String min = minWindow(s, t);
+
+    String min = body.minWindow(s, t);
     System.out.println(min);
   }
 
 
-  public static String minWindow(String s, String t) {
+  public String minWindow(String s, String t) {
 
     char[] sChars = s.toCharArray();
 
