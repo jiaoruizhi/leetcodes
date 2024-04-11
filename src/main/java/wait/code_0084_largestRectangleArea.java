@@ -13,23 +13,23 @@ import utils.utils;
 *
 * */
 public class code_0084_largestRectangleArea {
-    public static void main(String[] args) {
-        int [] heights = utils.getIntArray(null, null);
-        for ( int a : heights ) {
-            System.out.print(a+"   ");
-        }
-        int max = largestRectangleArea(heights);
-        System.out.println(max);
-
+  public static void main(String[] args) {
+    int[] heights = utils.getIntArray(null, null);
+    for (int a : heights) {
+      System.out.print(a + "   ");
     }
+    int max = largestRectangleArea(heights);
+    System.out.println(max);
+
+  }
 
 
 
-    public static int largestRectangleArea(int[] heights) {
-        int left = 0 , right = heights.length-1;
-        int max = 0 ;
+  public static int largestRectangleArea(int[] heights) {
+    int left = 0, right = heights.length - 1;
+    int max = 0;
 
 
-        return 0;
-    }
+    return 0;
+  }
 }
