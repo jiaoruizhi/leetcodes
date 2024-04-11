@@ -99,10 +99,13 @@ public class utils {
   }
 
   public static ListNode listBuild() {
+    return listBuild(" ");
+  }
+
+  public static ListNode listBuild(String split) {
     Scanner sc = new Scanner(System.in);
     String get = sc.nextLine();
-    get = get.substring(1, get.length() - 1);
-    String[] ss = get.split(",");
+    String[] ss = get.split(split);
     ListNode head = new ListNode(0);
     ListNode current = head;
     for (int i = 0; i < ss.length; i++) {
@@ -111,5 +114,19 @@ public class utils {
       current = now;
     }
     return head.next;
+  }
+
+  public static void printLinkedList(ListNode head) {
+    ListNode node = head;
+
+    while (true) {
+      if (node == null) break;
+
+      System.out.print(node.val);
+      if (node.next != null) {
+        System.out.print("->");
+      }
+      node = node.next;
+    }
   }
 }
