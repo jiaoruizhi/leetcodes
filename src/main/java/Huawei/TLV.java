@@ -32,7 +32,9 @@ public class TLV {
       i += 3 + len * 2;
 
       // 如果结束位置i越界，则当前TLV报文段是一个不完整的，需要丢弃
-      if (i >= msg.length()) break;
+      if (i >= msg.length()) {
+        break;
+      }
 
       // 题目已经保证tag不会重复
       tagMap.put(tag, new Integer[] {len, valueOffset});
