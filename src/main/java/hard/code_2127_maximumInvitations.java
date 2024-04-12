@@ -1,7 +1,6 @@
 package hard;
 
-
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -27,10 +26,6 @@ public class code_2127_maximumInvitations {
 
     System.out.println(body.maximumInvitations(favorite));
   }
-
-
-
-
 
   public int maximumInvitations(int[] favorite) {
     int n = favorite.length;

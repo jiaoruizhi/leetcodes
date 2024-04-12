@@ -1,8 +1,8 @@
 package hard;
 
 
-import static utils.utils.getIntArray;
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

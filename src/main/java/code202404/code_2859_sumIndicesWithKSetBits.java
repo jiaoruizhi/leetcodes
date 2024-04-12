@@ -1,15 +1,9 @@
 package code202404;
 
-import static utils.utils.getIntArray;
 import static utils.utils.getIntList;
-import static utils.utils.getTree;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
-
-import utils.dto.TreeNode;
 
 /*
 *

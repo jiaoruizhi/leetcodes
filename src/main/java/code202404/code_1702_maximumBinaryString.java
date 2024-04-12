@@ -1,8 +1,5 @@
 package code202404;
 
-import static utils.utils.getIntArray;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 /*

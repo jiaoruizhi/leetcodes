@@ -1,6 +1,6 @@
 package hard;
 
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.ArrayList;
 import java.util.Collections;

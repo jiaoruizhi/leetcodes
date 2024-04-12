@@ -1,6 +1,6 @@
 package code202404;
 
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.Arrays;
 
