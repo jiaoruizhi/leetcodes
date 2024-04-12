@@ -1,7 +1,7 @@
 package wait;
 
 
-import utils.utils;
+import static utils.arrayUtils.getIntArray;
 
 /*
 *
@@ -14,7 +14,7 @@ import utils.utils;
 * */
 public class code_0084_largestRectangleArea {
   public static void main(String[] args) {
-    int[] heights = utils.getIntArray(null, null);
+    int[] heights = getIntArray(null, null);
     for (int a : heights) {
       System.out.print(a + "   ");
     }

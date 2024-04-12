@@ -54,17 +54,11 @@ public class code_0101_isSymmetric {
   Stack<TreeNode> stack = new Stack<>();
 
   public boolean isSymmetric(TreeNode root) {
-
     if (root == null) {
-
       return true;
-
     }
-
     //调用递归函数，比较左节点，右节点
-
     return dfs(root.left, root.right);
-
   }
 
 
@@ -88,7 +82,5 @@ public class code_0101_isSymmetric {
     //再递归的比较 左节点的左孩子 和 右节点的右孩子
     //以及比较  左节点的右孩子 和 右节点的左孩子
     return dfs(left.left, right.right) && dfs(left.right, right.left);
-
   }
-
 }
