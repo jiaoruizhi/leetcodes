@@ -41,9 +41,7 @@ public class code_0101_isSymmetric {
     // 1,2,2,3,4,4,3
     // 1,2,2,null,3,null,3
     TreeNode root = utils.getTree();
-    boolean ret = body.isSymmetric(root);
-    System.out.println(ret);
-
+    System.out.println(body.isSymmetric(root));
   }
 
   public boolean isSymmetric(TreeNode root) {
