@@ -54,8 +54,6 @@ public class code_0101_isSymmetric {
     return dfs(root.left, root.right);
   }
 
-
-
   boolean dfs(TreeNode left, TreeNode right) {
     //递归的终止条件是两个节点都为空
     //或者两个节点中有一个为空
