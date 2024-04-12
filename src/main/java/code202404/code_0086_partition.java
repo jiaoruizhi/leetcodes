@@ -37,7 +37,6 @@ public class code_0086_partition {
 
     while (current != null) {
       ListNode newNode = new ListNode(current.val);
-      System.out.println(current.val);
 
       if (current.val < n) {
         left.next = newNode;
