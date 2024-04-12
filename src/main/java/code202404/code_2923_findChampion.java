@@ -1,10 +1,6 @@
 package code202404;
 
-import static utils.utils.getIntArray;
 import static utils.utils.getIntDoubleArray;
-
-import java.util.Arrays;
-import java.util.Scanner;
 
 /*
 *
@@ -35,13 +31,17 @@ public class code_2923_findChampion {
     for (int i = 0; i < n; i++) {
       boolean flag = true;
       for (int j = 0; j < n; j++) {
-        if (i == j) continue;
+        if (i == j) {
+          continue;
+        }
         if (grid[j][i] == 1) {
           flag = false;
           break;
         }
       }
-      if (flag) return i;
+      if (flag) {
+        return i;
+      }
     }
     return -1;
   }

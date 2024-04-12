@@ -1,7 +1,7 @@
 package code202309;
 
 
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.awt.*;
 import java.util.Arrays;

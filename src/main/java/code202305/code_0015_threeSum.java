@@ -1,8 +1,7 @@
 package code202305;
 
 
-import static utils.utils.getIntArray;
-import org.apache.commons.collections4.CollectionUtils;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.ArrayList;
 import java.util.Arrays;

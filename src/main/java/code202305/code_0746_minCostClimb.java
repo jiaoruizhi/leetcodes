@@ -1,7 +1,7 @@
 package code202305;
 
 
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.Scanner;
 

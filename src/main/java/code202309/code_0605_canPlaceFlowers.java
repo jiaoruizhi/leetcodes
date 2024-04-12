@@ -1,10 +1,7 @@
 package code202309;
 
-import static utils.utils.getIntArray;
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntArray;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /*

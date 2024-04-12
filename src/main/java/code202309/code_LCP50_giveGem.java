@@ -1,13 +1,11 @@
 package code202309;
 
 
-import static utils.utils.getIntArray;
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Stack;
 
 /*
 *

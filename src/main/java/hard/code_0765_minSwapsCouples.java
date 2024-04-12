@@ -1,10 +1,8 @@
 package hard;
 
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.Scanner;
-
-import code202311.code_0318_maxProduct;
 
 /*
 *

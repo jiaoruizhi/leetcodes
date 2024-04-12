@@ -1,15 +1,12 @@
 package code202309;
 
 
-import static utils.utils.getIntArray;
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /*
 *

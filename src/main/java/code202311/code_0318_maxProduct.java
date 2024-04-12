@@ -1,10 +1,7 @@
 package code202311;
 
+import static utils.arrayUtils.getStringArray;
 
-import static utils.utils.getStringArray;
-
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 /*

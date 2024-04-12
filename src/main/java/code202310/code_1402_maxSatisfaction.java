@@ -1,11 +1,8 @@
 package code202310;
 
-import static utils.utils.getIntArray;
+import static utils.arrayUtils.getIntArray;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /*

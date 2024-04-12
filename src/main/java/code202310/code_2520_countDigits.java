@@ -1,10 +1,6 @@
 package code202310;
 
-import static utils.utils.getIntArray;
-
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /*
@@ -22,7 +18,6 @@ public class code_2520_countDigits {
   public static void main(String[] args) {
     code_2520_countDigits body = new code_2520_countDigits();
     Scanner sc = new Scanner(System.in);
-
 
     // s
     int num = sc.nextInt();

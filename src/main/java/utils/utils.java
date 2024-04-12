@@ -1,30 +1,13 @@
 package utils;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Scanner;
-
-import org.w3c.dom.Node;
 
 import utils.dto.ListNode;
 import utils.dto.TreeNode;
 
 public class utils {
-  public static int[] getIntArray(Scanner scanner, String split) {
-    split = split == null ? " " : split;
-
-    Scanner sc = scanner != null ? scanner : new Scanner(System.in);
-    String line = sc.nextLine();
-    String[] str = line.split(split);
-    int[] ret = new int[str.length];
-    for (int i = 0; i < ret.length; i++) {
-      int a = Integer.parseInt(str[i]);
-      ret[i] = a;
-    }
-    return ret;
-  }
 
   public static List<Integer> getIntList(Scanner scanner, String split) {
     split = split == null ? " " : split;
@@ -40,32 +23,6 @@ public class utils {
 
     return res;
   }
-
-  public static String[] getStringArray(Scanner scanner, String split) {
-    split = split == null ? " " : split;
-
-    Scanner sc = scanner != null ? scanner : new Scanner(System.in);
-    String line = sc.nextLine();
-    String[] str = line.split(split);
-    return str;
-  }
-
-  public static int[][] getIntDoubleArray() {
-    Scanner sc = new Scanner(System.in);
-    int rows = sc.nextInt();
-    int columns = sc.nextInt();
-
-    int[][] data = new int[rows][columns];
-    for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < columns; j++) {
-        int cache = sc.nextInt();
-        data[i][j] = cache;
-      }
-    }
-
-    return data;
-  }
-
 
   public static TreeNode getTree() {
     Scanner sc = new Scanner(System.in);
@@ -120,7 +77,9 @@ public class utils {
     ListNode node = head;
 
     while (true) {
-      if (node == null) break;
+      if (node == null) {
+        break;
+      }
 
       System.out.print(node.val);
       if (node.next != null) {

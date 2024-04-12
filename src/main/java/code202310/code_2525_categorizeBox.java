@@ -1,9 +1,5 @@
 package code202310;
 
-import static utils.utils.getIntArray;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /*

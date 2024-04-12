@@ -1,6 +1,6 @@
 package code202404;
 
-import static utils.utils.getStringArray;
+import static utils.arrayUtils.getStringArray;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,8 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-
-import utils.dto.TreeNode;
 
 /*
 *
