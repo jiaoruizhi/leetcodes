@@ -28,21 +28,13 @@ public class code_1997_firstDayBeenInAllRooms {
   }
 
   public int firstDayBeenInAllRooms(int[] nextVisit) {
-    int mod = 1000000007;
-    int len = nextVisit.length;
-    int[] dp = new int[len];
-
-    dp[0] = 2; //初始化原地待一天 + 访问下一个房间一天
-    for (int i = 1; i < len; i++) {
-      int to = nextVisit[i];
-      dp[i] = 2 + dp[i - 1];
-      if (to != 0) {
-        dp[i] = (dp[i] - dp[to - 1] + mod) % mod; //避免负数
-      }
-
-      dp[i] = (dp[i] + dp[i - 1]) % mod;
+    int n = nextVisit.length;
+    long MOD = 1000000007;
+    long[] dp = new long[n];
+    for (int i = 1; i < n; i++) {
+      dp[i] = (2 * dp[i - 1] - dp[nextVisit[i - 1]] + 2 + MOD) % MOD;
     }
-    return dp[len - 2]; //题目保证n >= 2
+    return (int) dp[n - 1];
   }
 
 }
