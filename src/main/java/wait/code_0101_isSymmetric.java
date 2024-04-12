@@ -1,11 +1,7 @@
 package wait;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
-import utils.*;
 import utils.dto.TreeNode;
+import utils.utils;
 
 
 
@@ -49,9 +45,6 @@ public class code_0101_isSymmetric {
     System.out.println(ret);
 
   }
-
-  Queue<TreeNode> queue = new LinkedList<>();
-  Stack<TreeNode> stack = new Stack<>();
 
   public boolean isSymmetric(TreeNode root) {
     if (root == null) {
