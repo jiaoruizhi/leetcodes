@@ -128,5 +128,6 @@ public class utils {
       }
       node = node.next;
     }
+    System.out.println();
   }
 }
