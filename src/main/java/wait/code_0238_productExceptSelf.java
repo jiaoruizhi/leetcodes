@@ -25,15 +25,15 @@ package wait;
 *
 * */
 public class code_0238_productExceptSelf {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-    }
-
-
-    public static int[] productExceptSelf(int[] nums) {
+  }
 
 
+  public static int[] productExceptSelf(int[] nums) {
 
-        return null;
-    }
+
+
+    return null;
+  }
 }

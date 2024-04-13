@@ -21,18 +21,18 @@ package wait;
 *
 * */
 public class code_0680_validPalindrome {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-    }
-
-
-
-    public boolean validPalindrome(String s) {
-        boolean ret =true;
+  }
 
 
 
-        return ret;
+  public boolean validPalindrome(String s) {
+    boolean ret = true;
 
-    }
+
+
+    return ret;
+
+  }
 }

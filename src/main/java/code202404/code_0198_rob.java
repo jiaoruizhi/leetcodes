@@ -1,4 +1,9 @@
-package wait;
+package code202404;
+
+import static utils.arrayUtils.getIntArray;
+
+import java.util.Scanner;
+
 /*
 *
 *
@@ -26,14 +31,23 @@ package wait;
 *
 * */
 public class code_0198_rob {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
+    code_0198_rob body = new code_0198_rob();
+    Scanner sc = new Scanner(System.in);
 
+    // -2 -1 -1 1 2 3
+    int[] nums = getIntArray(sc, " ");
+    System.out.println(body.rob(nums));
+  }
+
+  public int rob(int[] nums) {
+    int[] cache = new int[nums.length + 1];
+
+    cache[0] = 0;
+    cache[1] = nums[0];
+    for (int i = 2; i < cache.length; i++) {
+      cache[i] = Math.max(cache[i-1], cache[i-2] + nums[i - 1]);
     }
-
-    public static int rob(int[] nums) {
-
-
-
-        return 0;
-    }
+    return cache[nums.length];
+  }
 }
