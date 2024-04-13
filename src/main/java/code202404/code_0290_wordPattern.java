@@ -1,5 +1,7 @@
 package code202404;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /*
@@ -54,6 +56,21 @@ public class code_0290_wordPattern {
       }
     }
 
+    return true;
+  }
+
+  public boolean wordPattern2(String pattern, String s) {
+    String[] words = s.split(" ");
+    if (words.length != pattern.length()) {
+      return false;
+    }
+    Map<Object, Integer> map = new HashMap<>();
+    //如果key不存在，插入成功，返回null；如果key存在，返回之前对应的value。
+    for (Integer i = 0; i < words.length; i++) {
+      if (!map.put(pattern.charAt(i), i).equals(map.put(words[i], i))) {
+        return false;
+      }
+    }
     return true;
   }
 }
