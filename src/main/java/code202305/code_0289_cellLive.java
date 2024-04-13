@@ -1,7 +1,7 @@
 package code202305;
 
 
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
 /*
 *

@@ -1,9 +1,8 @@
 package code202306;
 
 
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;

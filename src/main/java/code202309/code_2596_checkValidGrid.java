@@ -1,12 +1,9 @@
 package code202309;
 
 
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
 
 /*
 *
@@ -46,12 +43,16 @@ public class code_2596_checkValidGrid {
     for (int i = 0; i < grid.length * grid[0].length; i++) {
       if (i == 0) {
         last = map.get(i);
-        if (last[0] != 0 || last[1] != 0) return false;
+        if (last[0] != 0 || last[1] != 0) {
+          return false;
+        }
         continue;
       }
       Integer[] current = map.get(i);
       boolean check = checkOneStep(last[0], last[1], current[0], current[1]);
-      if (!check) return false;
+      if (!check) {
+        return false;
+      }
       last = current;
     }
     return true;

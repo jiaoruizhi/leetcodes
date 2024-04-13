@@ -1,10 +1,8 @@
 package code202401;
 
-import static utils.utils.getIntDoubleArray;
+import static utils.arrayUtils.getIntDoubleArray;
 
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /*
 *
