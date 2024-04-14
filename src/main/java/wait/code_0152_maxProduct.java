@@ -1,9 +1,13 @@
 package wait;
 
 
+import static utils.arrayUtils.getIntArray;
+
 import java.util.Scanner;
 
 /*
+*
+* https://leetcode.cn/problems/maximum-product-subarray/description/
 *
 * 给定一个数组，求出其中子数组 的   最大乘积
 *
@@ -19,49 +23,31 @@ import java.util.Scanner;
 *
 * */
 public class code_0152_maxProduct {
-    public static void main(String[] args) {
-        int [] get = arraybuild();
-        int max = maxProduct(get);
-        System.out.println(max);
+  public static void main(String[] args) {
+    code_0152_maxProduct body = new code_0152_maxProduct();
+    Scanner sc = new Scanner(System.in);
 
-    }
-    private static int[] arraybuild() {
-        Scanner sc = new Scanner(System.in);
-        String get =sc.nextLine();
-        get=get.substring(1,get.length()-1);
-        String [] ss =get.split(",");
-        int[] ret = new int[ss.length];
-        for (int i = 0; i < ss.length; i++) {
-            ret[i]=Integer.valueOf(ss[i]);
-        }
-        return ret;
-    }
+    // 2 3 -2 4
+    int[] get = getIntArray(sc, " ");
+    int max = body.maxProduct(get);
+    System.out.println(max);
 
-    public static int maxProduct(int[] nums) {
-        int [] help = new int[nums.length];
-        int now = 1;
-        for (int i = 0; i < help.length; i++) {
-            help[i]=nums[i]*now;
-            now = now*nums[i];
-        }
-        int max = Integer.MIN_VALUE;
-        int fu1 =-1,fu2=-1;
-        for (int i = help.length-1; i >=0 ; i--) {
-            System.out.println(help[i]);
-            if(max<help[i]){
-                max=help[i];
-            }
-            if(help[i]<0){
-                if(fu1==-1){fu1=i;}
-                else if(fu2==-1){fu2=i;}
+  }
 
-                if(fu1!=-1 && fu2!=-1){
-                    int z = help[fu1] / help[fu2] ;
-                    if(z>max){max=z;}
-                    fu1=fu2;fu2=-1;
-                }
-            }
-        }
-        return max;
+  public int maxProduct(int[] nums) {
+    int length = nums.length;
+    int[] maxF = new int[length];
+    int[] minF = new int[length];
+    System.arraycopy(nums, 0, maxF, 0, length);
+    System.arraycopy(nums, 0, minF, 0, length);
+    for (int i = 1; i < length; ++i) {
+      maxF[i] = Math.max(maxF[i - 1] * nums[i], Math.max(nums[i], minF[i - 1] * nums[i]));
+      minF[i] = Math.min(minF[i - 1] * nums[i], Math.min(nums[i], maxF[i - 1] * nums[i]));
     }
+    int ans = maxF[0];
+    for (int i = 1; i < length; ++i) {
+      ans = Math.max(ans, maxF[i]);
+    }
+    return ans;
+  }
 }
