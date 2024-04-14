@@ -1,10 +1,6 @@
 package code202309;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -54,12 +50,11 @@ public class code_0722_removeComments {
     // /*Test program */,int main(),{ ,  // variable declaration ,int a, b, c;,/* This is a ins_1,   multiline  ,   comment for ,   testing */,a = b + c;,}
 
 
-    long startTime = new Date().getTime();
+    long startTime = System.currentTimeMillis();
     List<String> result = removeComments(source);
-    long endTime = new Date().getTime();
+    long endTime = System.currentTimeMillis();
     System.out.println("本程序运行 " + (endTime - startTime) + " 毫秒完成。");
     System.out.println(result);
-
   }
 
 
