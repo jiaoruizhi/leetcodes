@@ -42,8 +42,8 @@ public class code_2187_trail {
       long currentTime = (max + min) / 2;
       long trips = 0;
       // 遍历每个车次需要完成的时间
-      for(int t : time){
-        if(currentTime < t){
+      for (int t : time) {
+        if (currentTime < t) {
           break;
         }
         // 记录当前时间能完成的趟数
