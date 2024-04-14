@@ -45,11 +45,9 @@ public class code_0290_wordPattern {
 
       for (int j = i + 1; j < n; j++) {
         if (chars[i] == chars[j] && !words[i].equals(words[j])) {
-          System.out.println(i + " 1");
           return false;
         }
         if (chars[i] != chars[j] && words[i].equals(words[j])) {
-          System.out.println(i + " 2");
           return false;
         }
         flags[i] = 1;
