@@ -1,4 +1,4 @@
-package wait;
+package code202404;
 
 
 import static utils.arrayUtils.getIntArray;

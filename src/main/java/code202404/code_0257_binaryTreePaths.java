@@ -4,7 +4,6 @@ import static utils.utils.getTree;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import utils.dto.TreeNode;
 
@@ -19,7 +18,6 @@ import utils.dto.TreeNode;
 public class code_0257_binaryTreePaths {
   public static void main(String[] args) {
     code_0257_binaryTreePaths body = new code_0257_binaryTreePaths();
-    Scanner sc = new Scanner(System.in);
 
     // 1,2,3,null,5
     TreeNode root = getTree();
