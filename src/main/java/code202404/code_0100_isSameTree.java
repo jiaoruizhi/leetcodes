@@ -7,9 +7,9 @@ import utils.dto.TreeNode;
 /*
 *
 
-给定一个二叉树的 root ，返回 最长的路径的长度 ，这个路径中的 每个节点具有相同值 。 这条路径可以经过也可以不经过根节点。
+给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
 
-两个节点之间的路径长度 由它们之间的边数表示。
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
 
 * */
 public class code_0100_isSameTree {
@@ -20,7 +20,6 @@ public class code_0100_isSameTree {
     // 1,4,5,4,4,null,5
     TreeNode p = getTree();
     TreeNode q = getTree();
-
 
     System.out.println(body.isSameTree(p, q));
   }
