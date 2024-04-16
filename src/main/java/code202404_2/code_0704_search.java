@@ -33,7 +33,6 @@ public class code_0704_search {
 
     while (left <= right) {
       int mid = (right + left) >> 1;
-      System.out.println(mid);
       int current = nums[mid];
       if (current == target) {
         return mid;
