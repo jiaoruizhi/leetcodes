@@ -1,5 +1,10 @@
 package code202404_2;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -50,6 +55,47 @@ public class code_0838_pushDominoes {
       i = j + 1;
     }
     return new String(s);
+  }
+
+  public String pushDominoes2(String dominoes) {
+    int n = dominoes.length();
+    Deque<Integer> queue = new ArrayDeque<Integer>();
+    int[] time = new int[n];
+    Arrays.fill(time, -1);
+    List<Character>[] force = new List[n];
+    for (int i = 0; i < n; i++) {
+      force[i] = new ArrayList<Character>();
+    }
+    for (int i = 0; i < n; i++) {
+      char f = dominoes.charAt(i);
+      if (f != '.') {
+        queue.offer(i);
+        time[i] = 0;
+        force[i].add(f);
+      }
+    }
+
+    char[] res = new char[n];
+    Arrays.fill(res, '.');
+    while (!queue.isEmpty()) {
+      int i = queue.poll();
+      if (force[i].size() == 1) {
+        char f = force[i].get(0);
+        res[i] = f;
+        int ni = f == 'L' ? i - 1 : i + 1;
+        if (ni >= 0 && ni < n) {
+          int t = time[i];
+          if (time[ni] == -1) {
+            queue.offer(ni);
+            time[ni] = t + 1;
+            force[ni].add(f);
+          } else if (time[ni] == t + 1) {
+            force[ni].add(f);
+          }
+        }
+      }
+    }
+    return new String(res);
   }
 
 }
