@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import utils.annotation.CalcCostTime;
 import utils.dto.TreeNode;
 import utils.utils;
 
@@ -25,6 +26,9 @@ public class code_0107_levelOrderBottom {
   }
 
   HashMap<Integer, List<Integer>> map = new HashMap<>();
+
+
+  @CalcCostTime
   public List<List<Integer>> levelOrderBottom(TreeNode root) {
     bfs(root, 0);
 
