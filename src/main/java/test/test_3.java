@@ -6,6 +6,9 @@ import java.util.stream.Stream;
 public class test_3 {
   public static void main(String[] args) {
 
+    int a = Runtime.getRuntime().availableProcessors();
+    System.out.println(a);
+
     Stream.of("Howareyou?","JavaStream","Hello","Welcome","Hi","aloha")
       .filter(text->text.startsWith("H"))
       .map(text->text.substring(2))
