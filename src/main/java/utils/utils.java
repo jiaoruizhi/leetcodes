@@ -36,18 +36,22 @@ public class utils {
       list.add(node);
     }
     // 构建二叉树
-    if (list.size() > 0) {
+    int size = list.size();
+    if (size > 0) {
       for (int i = 0; i < str.length / 2 - 1; i++) {       // i表示的是根节点的索引，从0开始
-        if (list.get(2 * i + 1) != null) {
-          list.get(i).left = list.get(2 * i + 1);
+        int lIndex = 2 * i + 1, rIndex = 2 * i + 2;
+        if (lIndex < size && list.get(lIndex) != null) {
+          list.get(i).left = list.get(lIndex);
         }
-        if (list.get(2 * i + 2) != null) {
-          list.get(i).right = list.get(2 * i + 2);
+        if (rIndex < size && list.get(rIndex) != null) {
+          list.get(i).right = list.get(rIndex);
         }
       }
       int lastIndex = str.length / 2 - 1;
-      list.get(lastIndex).left = list.get(lastIndex * 2 + 1);
-      if (str.length % 2 == 1) {
+      if (lastIndex * 2 + 1 < size && lastIndex >= 0) {
+        list.get(lastIndex).left = list.get(lastIndex * 2 + 1);
+      }
+      if (lastIndex * 2 + 2 < size && lastIndex >= 0 && str.length % 2 == 1) {
         list.get(lastIndex).right = list.get(lastIndex * 2 + 2);
       }
     }
