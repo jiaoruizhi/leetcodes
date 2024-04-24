@@ -2,6 +2,7 @@ package code202404_2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,7 +35,7 @@ public class code_2385_amountOfTime {
 
     int result = -1;
     List<Integer> removeList = List.of(start);
-    List<Integer> next = new ArrayList<>();
+    HashSet<Integer> next = new HashSet<>();
 
     do {
       for (int i : removeList) {
@@ -68,6 +69,30 @@ public class code_2385_amountOfTime {
       List<Integer> next = map.getOrDefault(root.val, new ArrayList<>());
       next.add(target.val);
       map.put(root.val, next);
+    }
+  }
+
+  int ans = 0;
+  public int amountOfTime2(TreeNode root, int start) {
+    dfs(root, start);
+    return ans;
+  }
+
+  public int dfs(TreeNode root, int start) {
+    if (root == null)
+      return 0;
+    int l = dfs(root.left, start);
+    int r = dfs(root.right, start);
+    if (root.val == start) {
+      ans = Math.max(l, r);
+      return -1;
+    } else {
+      if (l < 0 || r < 0) {
+        ans = Math.max(Math.abs(l) + Math.abs(r), ans);
+        return Math.min(l, r) - 1;
+      } else {
+        return Math.max(l, r) + 1;
+      }
     }
   }
 
