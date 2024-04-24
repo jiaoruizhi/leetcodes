@@ -38,7 +38,9 @@ public class code_2385_amountOfTime {
 
     do {
       for (int i : removeList) {
-        next.addAll(map.getOrDefault(i, new ArrayList<>()));
+        if (map.containsKey(i)) {
+          next.addAll(map.get(i));
+        }
         map.remove(i);
       }
       removeList = new ArrayList<>(next);
