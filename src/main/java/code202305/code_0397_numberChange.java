@@ -1,6 +1,8 @@
 package code202305;
 
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /*
@@ -17,30 +19,34 @@ import java.util.Scanner;
 * */
 public class code_0397_numberChange {
   public static void main(String[] args) {
+    code_0397_numberChange body = new code_0397_numberChange();
     Scanner sc = new Scanner(System.in);
+
+    // 2147483647
+
+    System.out.println(Integer.MAX_VALUE);
+
     int number = sc.nextInt();
-    int count = integerReplacement(number);
+    int count = body.integerReplacement(number);
 
     System.out.println(count);
   }
 
+  Map<Long, Integer> map = new HashMap<>();
 
-  public static int integerReplacement(int n) {
-    if (n == 1) return 0;
-    if (n == 2) return 1;
-    int[] dataArray = new int[n + 1];
-    dataArray[1] = 0;
-    dataArray[2] = 1;
+  public int integerReplacement(int n) {
+    return dfs(n);
+  }
 
-    for (int i = 3; i <= n; i++) {
-      int cache;
-      if (i % 2 == 0) {
-        cache = dataArray[i / 2] + 1;
-      } else {
-        cache = Math.min(dataArray[(i + 1) / 2], dataArray[(i - 1) / 2]) + 2;
-      }
-      dataArray[i] = cache;
+  int dfs(long n) {
+    if (n == 1) {
+      return 0;
     }
-    return dataArray[n];
+    if (map.containsKey(n)) {
+      return map.get(n);
+    }
+    int ans = n % 2 == 0 ? dfs(n / 2) : Math.min(dfs(n + 1), dfs(n - 1));
+    map.put(n, ++ans);
+    return ans;
   }
 }
