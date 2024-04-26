@@ -24,47 +24,32 @@ public class code_0670_maximumSwap {
     code_0670_maximumSwap body = new code_0670_maximumSwap();
     Scanner sc = new Scanner(System.in);
 
-    // 3 2 0 0 1 0 2 0
-    // 5 2 0 0 1 0 -1 0 0 1 0 -1
-    // [[0,0],[1,0],[-1,0],[0,1],[0,-1]]
+    // 2736
+    // 9973
     int num = sc.nextInt();
 
     System.out.println(body.maximumSwap(num));
   }
 
-  // O(n) = log(k)
   public int maximumSwap(int num) {
-    int leftIndex = -1;
-    int left = -1;
-
-    int rightIndex = -1;
-    int right = -1;
-
-    int cache = num;
-    int i = 0;
-    while (cache > 0) {
-      int current = cache % 10;
-      if (current > right) {
-        right = current;
-        rightIndex = i;
+    char[] s = Integer.toString(num).toCharArray();
+    int maxIdx = s.length - 1;
+    int p = -1, q = 0;
+    for (int i = s.length - 2; i >= 0; i--) {
+      if (s[i] > s[maxIdx]) { // s[i] 是目前最大数字
+        maxIdx = i;
+      } else if (s[i] < s[maxIdx]) { // s[i] 右边有比它大的
+        p = i;
+        q = maxIdx; // 更新 p 和 q
       }
-      if (current < right) {
-        leftIndex = i;
-        left = current;
-      }
-      cache /= 10;
-      i++;
     }
-
-    int m1 = (int) (right * Math.pow(10, rightIndex));
-    int m2 = (int) (left * Math.pow(10, (leftIndex - 1)));
-
-
-    int p1 = (int) (right * Math.pow(10, (rightIndex - 1)));
-    int p2 = (int) (left * Math.pow(10, leftIndex));
-
-    return num - m1 - m2 + p1 + p2;
+    if (p == -1) { // 这意味着 s 是降序的
+      return num;
+    }
+    char temp = s[p];
+    s[p] = s[q];
+    s[q] = temp; // 交换 s[p] 和 s[q]
+    return Integer.parseInt(new String(s));
   }
-
 }
 

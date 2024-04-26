@@ -20,7 +20,7 @@ public class code_1371_findTheLongestSubstring {
     System.out.println(length);
   }
 
-  private int findTheLongestSubstring(String s) {
+  public int findTheLongestSubstring(String s) {
     if (s == null || s.length() == 0) {
       return 0;
     }
@@ -28,8 +28,5 @@ public class code_1371_findTheLongestSubstring {
 
 
     return 0;
-
   }
-
-
 }
