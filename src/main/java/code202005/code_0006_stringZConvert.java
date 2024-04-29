@@ -16,9 +16,9 @@ E   D   H   N
 *
 *
 * */
-public class code_0006_StringZconvert {
+public class code_0006_stringZConvert {
   public static void main(String[] args) {
-    code_0006_StringZconvert body = new code_0006_StringZconvert();
+    code_0006_stringZConvert body = new code_0006_stringZConvert();
     Scanner sc = new Scanner(System.in);
 
     //
