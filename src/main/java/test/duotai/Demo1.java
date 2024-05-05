@@ -21,6 +21,5 @@ public class Demo1 {
     b.run();
     System.out.println(b.num);
     System.out.println(b.age);
-
   }
 }
