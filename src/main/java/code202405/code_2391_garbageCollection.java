@@ -31,11 +31,6 @@ public class code_2391_garbageCollection {
     // 2 4 3
     int[] travel = getIntArray(sc, " ");
 
-    // 2 2 2 2 2
-    // 8
-
-    // 1000000000 1000000000 1000000000 1000000000
-    // -294967296
     System.out.println(body.garbageCollection(garbage, travel));
   }
 
