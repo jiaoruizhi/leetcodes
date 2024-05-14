@@ -26,9 +26,9 @@ public class code_2391_garbageCollection {
     code_2391_garbageCollection body = new code_2391_garbageCollection();
     Scanner sc = new Scanner(System.in);
 
-    // 1 0 -1 0 -2 2
+    // G P GP GG
     String[] garbage = getStringArray(sc, " ");
-    // 0
+    // 2 4 3
     int[] travel = getIntArray(sc, " ");
 
     // 2 2 2 2 2
