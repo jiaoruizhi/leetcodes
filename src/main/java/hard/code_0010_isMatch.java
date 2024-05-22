@@ -68,10 +68,9 @@ public class code_0010_isMatch {
   }
 
   public static boolean isMatch1(String s, String p) {
-
-
-    if (p.isEmpty())
+    if (p.isEmpty()) {
       return s.isEmpty();
+    }
     boolean first_match = (!s.isEmpty() && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.'));
 
     if (p.length() >= 2 && p.charAt(1) == '*') {
@@ -79,9 +78,6 @@ public class code_0010_isMatch {
     } else {
       return first_match && isMatch1(s.substring(1), p.substring(1));
     }
-
-
-
   }
 
 
