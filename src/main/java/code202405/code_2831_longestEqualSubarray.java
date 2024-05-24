@@ -24,9 +24,11 @@ public class code_2831_longestEqualSubarray {
     code_2831_longestEqualSubarray body = new code_2831_longestEqualSubarray();
     Scanner sc = new Scanner(System.in);
 
-    // G P GP GG
+    // 1 3 2 3 1 3
+    // 3
     List<Integer> nums = getIntList(sc, " ");
-    // 2 4 3
+    // 1 1 2 2 1 1
+    // 2
     int k = sc.nextInt();
 
     System.out.println(body.longestEqualSubarray(nums, k));
