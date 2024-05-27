@@ -32,7 +32,6 @@ public class code_1738_kthLargestValue {
 
 
   PriorityQueue<Integer> q = new PriorityQueue<Integer>((a, b) -> b - a);
-
   public int kthLargestValue(int[][] matrix, int k) {
     int m = matrix.length, n = matrix[0].length;
     int[][] dp = new int[m][n];
