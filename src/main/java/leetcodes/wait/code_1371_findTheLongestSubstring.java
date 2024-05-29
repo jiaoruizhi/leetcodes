@@ -1,4 +1,4 @@
-package wait;
+package leetcodes.wait;
 
 
 import java.util.Scanner;
