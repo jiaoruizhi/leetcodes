@@ -21,14 +21,11 @@ public class code_2965_findMissingAndRepeatedValues {
     code_2965_findMissingAndRepeatedValues body = new code_2965_findMissingAndRepeatedValues();
     Scanner sc = new Scanner(System.in);
 
-    // 2 2 5 2 1 6
+    // 2 2 1 3 2 2
     // 2
     int[][] grid = getIntDoubleArray();
-    // 2 4 3 3 5 4 9 6
-    // 4
-    int k = sc.nextInt();
 
-    System.out.println(Arrays.toString(body.findMissingAndRepeatedValues(grid)));
+    System.out.println(Arrays.toString(body.findMissingAndRepeatedValues2(grid)));
   }
 
 
@@ -48,6 +45,28 @@ public class code_2965_findMissingAndRepeatedValues {
       if (!set.contains(i)) {
         result[1] = i;
         break;
+      }
+    }
+    return result;
+  }
+
+  public int[] findMissingAndRepeatedValues2(int[][] grid) {
+    int[] result = new int[2];
+    int n = grid.length;
+    int[] data = new int[n * n + 1];
+
+    for (int i = 0; i < n; i++) {
+      for (int value : grid[i]) {
+        data[value]++;
+      }
+    }
+
+    for (int i = 1; i <= n * n; i++) {
+      if (data[i] == 0) {
+        result[1] = i;
+      }
+      if (data[i] == 2) {
+        result[0] = i;
       }
     }
     return result;
