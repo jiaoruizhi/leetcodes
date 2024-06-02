@@ -10,9 +10,9 @@ import java.util.Scanner;
 * */
 
 
-public class code_2928_findMissingAndRepeatedValues {
+public class code_2928_distributeCandies {
   public static void main(String[] args) {
-    code_2928_findMissingAndRepeatedValues body = new code_2928_findMissingAndRepeatedValues();
+    code_2928_distributeCandies body = new code_2928_distributeCandies();
     Scanner sc = new Scanner(System.in);
 
     int n = sc.nextInt();
