@@ -2,9 +2,7 @@ package test;
 
 public class test_5 {
   public static void main(String[] args) {
-    test_4 body = new test_4();
-
-//    Jedis jedis = new Jedis("localhost");
+    test_5 body = new test_5();
 
     System.out.println(body.try_catch_return());
 
