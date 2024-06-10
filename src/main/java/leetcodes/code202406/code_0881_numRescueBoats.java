@@ -42,18 +42,15 @@ public class code_0881_numRescueBoats {
       int now = people[i], max = limit - now;
       while (people[rightIndex] > max && rightIndex > i) {
         if (flag[rightIndex] == 0) {
-          System.out.println(people[rightIndex]);
           flag[rightIndex] = 1;
           result++;
         }
         rightIndex--;
       }
-      System.out.println(people[i] + " - " + people[rightIndex]);
       flag[rightIndex--] = 1;
       flag[i] = 1;
       result++;
     }
-    System.out.println("---------------------------------------------");
 
     return result;
   }
