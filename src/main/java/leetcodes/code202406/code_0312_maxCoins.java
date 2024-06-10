@@ -24,7 +24,7 @@ public class code_0312_maxCoins {
     code_0312_maxCoins body = new code_0312_maxCoins();
     Scanner sc = new Scanner(System.in);
 
-    // 5 3 0 1 1 1 2 5 2 3 13 3 4 9 4 5 2
+    // 3 1 5 8
     // 1
     int[] nums = getIntArray(sc, " ");
 
