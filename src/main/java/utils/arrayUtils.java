@@ -27,6 +27,16 @@ public class arrayUtils {
     return str;
   }
 
+
+  /*
+
+  3 5
+  1 1 1 1 1
+  1 1 1 1 1
+  1 1 1 1 1
+
+  */
+
   public static int[][] getIntDoubleArray() {
     Scanner sc = new Scanner(System.in);
     int rows = sc.nextInt();
