@@ -31,7 +31,7 @@ public class code_0312_maxCoins {
     System.out.println(body.maxCoins(nums));
   }
 
-  int maxCoins(int[] nums) {
+  public int maxCoins(int[] nums) {
     int n = nums.length;
     // 添加两侧的虚拟气球
     int[] points = new int[n + 2];
