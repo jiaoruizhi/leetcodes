@@ -1,21 +1,30 @@
 package utils.dto;
 
 public class Node {
-  public int val;
-  public Node left;
-  public Node right;
+  public int value;
+  public int x;
+  public int y;
   public Node next;
 
   public Node() {}
 
   public Node(int _val) {
-    val = _val;
+    value = _val;
   }
 
-  public Node(int _val, Node _left, Node _right, Node _next) {
-    val = _val;
-    left = _left;
-    right = _right;
-    next = _next;
+  public Node(int _x, int _y) {
+    x = _x;
+    y = _y;
+  }
+
+
+  public Node(int _val, int _x, int _y) {
+    value = _val;
+    x = _x;
+    y = _y;
+  }
+
+  public boolean equals(Node obj) {
+    return x == obj.x && y == obj.y;
   }
 }
