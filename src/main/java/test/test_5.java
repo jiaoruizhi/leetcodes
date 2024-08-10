@@ -1,10 +1,15 @@
 package test;
 
+import java.time.LocalDateTime;
+
 public class test_5 {
   public static void main(String[] args) {
     test_5 body = new test_5();
 
-    System.out.println(body.try_catch_return());
+    LocalDateTime now = LocalDateTime.now();
+    now = now.minusSeconds(now.getSecond());
+    System.out.println(now);
+
 
   }
 
