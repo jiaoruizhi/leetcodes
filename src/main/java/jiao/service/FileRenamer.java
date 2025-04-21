@@ -18,7 +18,6 @@ public class FileRenamer {
         List<String> heads = new ArrayList<String>() {{
             add("壁纸");
             add("桌面");
-            add("表情");
         }};
 
         for (String head : heads) {
