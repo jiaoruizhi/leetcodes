@@ -1,0 +1,1 @@
+alter table base_related add column equipment_effective_dates varchar(200);

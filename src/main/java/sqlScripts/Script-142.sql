@@ -1,0 +1,10 @@
+alter table tra_certificate_manage add column zhongyuan_id bigint(20);
+alter table tra_personnel_train add column zhongyuan_id bigint(20);
+alter table tra_post_train_manage add column zhongyuan_id bigint(20);
+alter table base_related add column zhongyuan_id bigint(20);
+alter table base_related_assess add column zhongyuan_id bigint(20);
+alter table base_related_certificate add column zhongyuan_id bigint(20);
+alter table base_related_team add column zhongyuan_id bigint(20);
+alter table tra_training add column zhongyuan_id bigint(20);
+alter table tra_training_member add column zhongyuan_id bigint(20);
+alter table tra_training_plan add column zhongyuan_id bigint(20);

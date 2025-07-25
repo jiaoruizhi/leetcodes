@@ -1,0 +1,146 @@
+-- select * from batch_step_execution_context;
+-- select * from batch_job_execution_params;
+-- select * from batch_job_execution_context;
+-- select * from batch_step_execution;
+-- select * from batch_job_execution;
+-- select * from batch_job_instance;
+
+-- safety_hngh.batch_step_execution definition
+DROP TABLE IF EXISTS batch_step_execution_context;
+DROP TABLE IF EXISTS batch_job_execution_params;
+DROP TABLE IF EXISTS batch_job_execution_context;
+DROP TABLE IF EXISTS batch_step_execution;
+DROP TABLE IF EXISTS batch_job_execution;
+DROP TABLE IF EXISTS batch_job_instance;
+
+
+
+
+-- safety_hngh.batch_job_instance definition
+
+CREATE TABLE `batch_job_instance` (
+  `JOB_INSTANCE_ID` bigint(20) NOT NULL,
+  `VERSION` bigint(20) NOT NULL,
+  `JOB_NAME` varchar(100) NOT NULL,
+  `JOB_KEY` varchar(32) NOT NULL,
+  PRIMARY KEY (`JOB_INSTANCE_ID`, `JOB_KEY`),
+  UNIQUE KEY `JOB_INST_UN` (`JOB_NAME`, `JOB_KEY`) BLOCK_SIZE 16384 GLOBAL,
+  KEY `JOB_INSTANCE_ID` (`JOB_INSTANCE_ID`) BLOCK_SIZE 16384 GLOBAL
+) DEFAULT CHARSET = utf8mb4 ROW_FORMAT = DYNAMIC COMPRESSION = 'zstd_1.3.8' REPLICA_NUM = 3 BLOCK_SIZE = 16384 USE_BLOOM_FILTER = FALSE TABLET_SIZE = 134217728 PCTFREE = 0;
+
+
+
+
+-- safety_hngh.batch_job_execution definition
+
+CREATE TABLE `batch_job_execution` (
+  `JOB_EXECUTION_ID` bigint(20) NOT NULL,
+  `VERSION` bigint(20) DEFAULT NULL,
+  `JOB_INSTANCE_ID` bigint(20) NOT NULL,
+  `CREATE_TIME` datetime NOT NULL,
+  `START_TIME` datetime DEFAULT NULL,
+  `END_TIME` datetime DEFAULT NULL,
+  `STATUS` varchar(10) DEFAULT NULL,
+  `EXIT_CODE` varchar(2500) DEFAULT NULL,
+  `EXIT_MESSAGE` varchar(2500) DEFAULT NULL,
+  `LAST_UPDATED` datetime DEFAULT NULL,
+  `JOB_CONFIGURATION_LOCATION` varchar(2500) DEFAULT NULL,
+  PRIMARY KEY (`JOB_EXECUTION_ID`),
+  KEY `JOB_INST_EXEC_FK` (`JOB_INSTANCE_ID`) BLOCK_SIZE 16384 GLOBAL
+) DEFAULT CHARSET = utf8mb4 ROW_FORMAT = DYNAMIC COMPRESSION = 'zstd_1.3.8' REPLICA_NUM = 3 BLOCK_SIZE = 16384 USE_BLOOM_FILTER = FALSE TABLET_SIZE = 134217728 PCTFREE = 0;
+;
+
+
+
+
+
+
+CREATE TABLE `batch_step_execution` (
+  `STEP_EXECUTION_ID` bigint(20) NOT NULL,
+  `VERSION` bigint(20) NOT NULL,
+  `STEP_NAME` varchar(100) NOT NULL,
+  `JOB_EXECUTION_ID` bigint(20) NOT NULL,
+  `START_TIME` datetime NOT NULL,
+  `END_TIME` datetime DEFAULT NULL,
+  `STATUS` varchar(10) DEFAULT NULL,
+  `COMMIT_COUNT` bigint(20) DEFAULT NULL,
+  `READ_COUNT` bigint(20) DEFAULT NULL,
+  `FILTER_COUNT` bigint(20) DEFAULT NULL,
+  `WRITE_COUNT` bigint(20) DEFAULT NULL,
+  `READ_SKIP_COUNT` bigint(20) DEFAULT NULL,
+  `WRITE_SKIP_COUNT` bigint(20) DEFAULT NULL,
+  `PROCESS_SKIP_COUNT` bigint(20) DEFAULT NULL,
+  `ROLLBACK_COUNT` bigint(20) DEFAULT NULL,
+  `EXIT_CODE` varchar(2500) DEFAULT NULL,
+  `EXIT_MESSAGE` varchar(2500) DEFAULT NULL,
+  `LAST_UPDATED` datetime DEFAULT NULL,
+  PRIMARY KEY (`STEP_EXECUTION_ID`),
+  CONSTRAINT `JOB_EXEC_STEP_FK` FOREIGN KEY (`JOB_EXECUTION_ID`) REFERENCES `safety_hngh`.`batch_job_execution`(`JOB_EXECUTION_ID`) ON UPDATE RESTRICT ON DELETE RESTRICT ,
+  KEY `JOB_EXEC_STEP_FK` (`JOB_EXECUTION_ID`) BLOCK_SIZE 16384 GLOBAL
+) DEFAULT CHARSET = utf8mb4 ROW_FORMAT = DYNAMIC COMPRESSION = 'zstd_1.3.8' REPLICA_NUM = 3 BLOCK_SIZE = 16384 USE_BLOOM_FILTER = FALSE TABLET_SIZE = 134217728 PCTFREE = 0;
+
+
+
+
+
+-- safety_hngh.batch_job_execution_context definition
+
+CREATE TABLE `batch_job_execution_context` (
+  `JOB_EXECUTION_ID` bigint(20) NOT NULL,
+  `SHORT_CONTEXT` varchar(2500) NOT NULL,
+  `SERIALIZED_CONTEXT` text DEFAULT NULL,
+  PRIMARY KEY (`JOB_EXECUTION_ID`),
+  CONSTRAINT `JOB_EXEC_CTX_FK` FOREIGN KEY (`JOB_EXECUTION_ID`) REFERENCES `safety_hngh`.`batch_job_execution`(`JOB_EXECUTION_ID`) ON UPDATE RESTRICT ON DELETE RESTRICT 
+) DEFAULT CHARSET = utf8mb4 ROW_FORMAT = DYNAMIC COMPRESSION = 'zstd_1.3.8' REPLICA_NUM = 3 BLOCK_SIZE = 16384 USE_BLOOM_FILTER = FALSE TABLET_SIZE = 134217728 PCTFREE = 0;
+
+
+
+
+
+
+-- safety_hngh.batch_job_execution_params definition
+
+CREATE TABLE `batch_job_execution_params` (
+  `JOB_EXECUTION_ID` bigint(20) NOT NULL,
+  `TYPE_CD` varchar(6) NOT NULL,
+  `KEY_NAME` varchar(100) NOT NULL,
+  `STRING_VAL` varchar(250) DEFAULT NULL,
+  `DATE_VAL` datetime DEFAULT NULL,
+  `LONG_VAL` bigint(20) DEFAULT NULL,
+  `DOUBLE_VAL` double DEFAULT NULL,
+  `IDENTIFYING` char(1) NOT NULL,
+  CONSTRAINT `JOB_EXEC_PARAMS_FK` FOREIGN KEY (`JOB_EXECUTION_ID`) REFERENCES `safety_hngh`.`batch_job_execution`(`JOB_EXECUTION_ID`) ON UPDATE RESTRICT ON DELETE RESTRICT ,
+  KEY `JOB_EXEC_PARAMS_FK` (`JOB_EXECUTION_ID`) BLOCK_SIZE 16384 GLOBAL
+) DEFAULT CHARSET = utf8mb4 ROW_FORMAT = DYNAMIC COMPRESSION = 'zstd_1.3.8' REPLICA_NUM = 3 BLOCK_SIZE = 16384 USE_BLOOM_FILTER = FALSE TABLET_SIZE = 134217728 PCTFREE = 0;
+
+
+
+
+
+
+
+
+-- safety_hngh.batch_step_execution_context definition
+
+CREATE TABLE `batch_step_execution_context` (
+  `STEP_EXECUTION_ID` bigint(20) NOT NULL,
+  `SHORT_CONTEXT` varchar(2500) NOT NULL,
+  `SERIALIZED_CONTEXT` text DEFAULT NULL,
+  PRIMARY KEY (`STEP_EXECUTION_ID`),
+  CONSTRAINT `STEP_EXEC_CTX_FK` FOREIGN KEY (`STEP_EXECUTION_ID`) REFERENCES `safety_hngh`.`batch_step_execution`(`STEP_EXECUTION_ID`) ON UPDATE RESTRICT ON DELETE RESTRICT 
+) DEFAULT CHARSET = utf8mb4 ROW_FORMAT = DYNAMIC COMPRESSION = 'zstd_1.3.8' REPLICA_NUM = 3 BLOCK_SIZE = 16384 USE_BLOOM_FILTER = FALSE TABLET_SIZE = 134217728 PCTFREE = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

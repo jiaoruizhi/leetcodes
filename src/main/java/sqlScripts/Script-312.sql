@@ -1,0 +1,1 @@
+ALTER TABLE `ins_issue` ADD COLUMN `remark` varchar(400) null comment '备注';

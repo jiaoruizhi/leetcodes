@@ -1,0 +1,1 @@
+select t1.`result` , t1.* from ins_inspection_item t1

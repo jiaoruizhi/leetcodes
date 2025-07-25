@@ -1,0 +1,1 @@
+select * from pfm_work_config pwc 

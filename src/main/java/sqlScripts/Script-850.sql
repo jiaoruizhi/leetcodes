@@ -1,0 +1,12 @@
+
+
+UPDATE DATABASECHANGELOGLOCK SET LOCKED = 0, LOCKGRANTED = NULL, LOCKEDBY = NULL WHERE ID = 1;
+
+
+
+
+
+
+
+select * from ctr_invitation t1
+where id = 17

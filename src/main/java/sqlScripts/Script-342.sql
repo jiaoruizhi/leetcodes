@@ -1,0 +1,1 @@
+alter table ins_checkform_share add column target_from_id bigint(20) null;

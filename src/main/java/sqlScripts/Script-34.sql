@@ -1,0 +1,3 @@
+
+
+ALTER TABLE dev_inspection_form ADD device_item_id BIGINT NULL COMMENT '管理区域ID';

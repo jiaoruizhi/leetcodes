@@ -1,0 +1,1 @@
+ALTER TABLE `ins_issue` ADD COLUMN `zhongyuan_push_flag` bigint(10) NULL comment '中远推送标志' ;

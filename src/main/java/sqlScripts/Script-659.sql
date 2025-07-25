@@ -1,0 +1,2 @@
+ALTER TABLE `ope_special_operation` ADD COLUMN `safe_confessor_sign_document_id` bigint(10) NULL comment '安全交底人签字';
+ALTER TABLE `ope_special_operation` ADD COLUMN `accept_confessor_sign_document_id` bigint(10) NULL comment '接受交底人签字';

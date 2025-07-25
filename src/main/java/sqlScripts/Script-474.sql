@@ -1,0 +1,1 @@
+ALTER TABLE `dev_inspection_form` ADD COLUMN `ganghang_id` bigint(10) NULL comment '港航ID';
